@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  bitcoin-in-action:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./datadir:/root/.bitcoin
+      - ./Bitcoin-in-action-book:/opt/Bitcoin-in-action-book
+      - ./errata-corrige-e-sorgente-esempi:/opt/Bitcoin-teoria-pratica
+    ports:
+      - "18443:18443"
+      - "18444:18444"
+    entrypoint: ["/entrypoint.sh"]
