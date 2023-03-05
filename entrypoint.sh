@@ -7,6 +7,6 @@ if [ ! -d "$HOME/.bitcoin" ]; then
 fi
 
 # Move bitcoin.conf to .bitcoin directory
-mv /opt/bitcoin.conf "$HOME/.bitcoin"
+cp /opt/bitcoin.conf "$HOME/.bitcoin"
 
 bitcoind && tail -F ~/.bitcoin/regtest/debug.log

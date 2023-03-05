@@ -44,7 +44,7 @@ cd P2SH\ -\ P2PK
 
 Se vogliamo attivare il debug della transazione sarà necessario utilizzare il parametro DEBUG=1
 ```bash
-./main.sh
+./main.sh DEBUG=1
 ```
 
 La differenza con il libro è minima, invece ti lanciare `sh main.sh` dovrete lanciare `./main.sh`
