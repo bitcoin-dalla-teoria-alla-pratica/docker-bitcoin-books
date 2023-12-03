@@ -1,4 +1,4 @@
-FROM debian
+FROM debian:12-slim
 
 RUN  apt-get update \
     && apt-get install -y \
@@ -23,9 +23,9 @@ RUN  apt-get update \
     gnupg \
     dc \
     zsh \
+    python3-base58 \
     && apt clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-RUN pip install base58
 
 RUN sh -c "$(wget -O- https://github.com/deluan/zsh-in-docker/releases/download/v1.1.3/zsh-in-docker.sh)" -- -t robbyrussell
 
@@ -44,9 +44,9 @@ make install
 #. bitcoin-bash-tools/bitcoin.sh
 
 
-ARG VERSION=24.0
+ARG VERSION=24.2
 #https://github.com/bitcoin/bitcoin/blob/master/contrib/verify-commits/trusted-keys
-ARG BITCOIN_CORE_SIGNATURE=71A3B16735405025D447E8F274810B012346C9A6
+ARG BITCOIN_CORE_SIGNATURE=E777299FC265DD04793070EB944D35F9AC3DB76A
 ARG ARCH=x86_64
 
 
