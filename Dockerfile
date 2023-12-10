@@ -44,7 +44,7 @@ make install
 #. bitcoin-bash-tools/bitcoin.sh
 
 
-ARG VERSION=24.2
+ARG VERSION=26.0
 #https://github.com/bitcoin/bitcoin/blob/master/contrib/verify-commits/trusted-keys
 ARG BITCOIN_CORE_SIGNATURE=E777299FC265DD04793070EB944D35F9AC3DB76A
 ARG ARCH=x86_64
