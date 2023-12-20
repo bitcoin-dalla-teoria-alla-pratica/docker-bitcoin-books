@@ -5,8 +5,8 @@
 
 Per utilizzare questo repository, per prima cosa è necessario clonarlo.
 ```bash
-git clone https://github.com/bitcoin-dalla-teoria-alla-pratica/Docker-bitcoin.git --depth 1
-cd Docker-bitcoin
+git clone https://github.com/bitcoin-dalla-teoria-alla-pratica/docker-bitcoin-books.git --depth 1
+cd docker-bitcoin-books
 ```
 Successivamente sarà necessario clonare i repositori del libro/i
 
