@@ -2,6 +2,7 @@ version: "3"
 
 services:
   bitcoin-in-action:
+    container_name: bitcoin-in-action
     build:
       context: .
       dockerfile: Dockerfile
@@ -13,3 +14,29 @@ services:
       - "18443:18443"
       - "18444:18444"
     entrypoint: ["/entrypoint.sh"]
+    networks:
+      - mynetwork 
+
+  explorer:
+    container_name: btc-rpc-explorer
+    environment:
+      BTCEXP_HOST: 0.0.0.0
+      BTCEXP_BITCOIND_HOST: bitcoin-in-action
+      BTCEXP_BITCOIND_COOKIE: /shared_data/regtest/.cookie
+      BTCEXP_BITCOIND_PORT: 18443
+      BTCEXP_UI_THEME: light
+    build:
+      context: ./
+    image: btc-rpc-explorer:latest
+    ports:
+      - "3002:3002"
+    volumes:
+      - ./datadir:/shared_data  
+    networks:
+      - mynetwork 
+    depends_on:
+      - bitcoin-in-action
+
+networks:
+  mynetwork:
+    driver: bridge

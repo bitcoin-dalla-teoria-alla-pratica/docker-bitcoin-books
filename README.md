@@ -35,7 +35,7 @@ docker ps
 e utilizziamo il valore sotto la colonna NAMES, ad esempio
 ```bash
 
-docker exec -it docker-bitcoin-bitcoin-in-action-1 zsh
+docker exec -it bitcoin-in-action zsh
 
 ```
 Successivamente ci muoviamo dentro il Capitolo 3
@@ -52,6 +52,15 @@ Se vogliamo attivare il debug della transazione sarà necessario utilizzare il p
 ```
 
 La differenza con il libro è minima, invece ti lanciare `sh main.sh` dovrete lanciare `./main.sh`
+
+Questo grazie al progetto [btcdeb](https://github.com/bitcoin-core/btcdeb) possiamo avere un il degub passo passo
+
+# Utilizzo di btc-rpc-explorer su Regtest
+
+Grazie al progetto [btc-rpc-explorer](https://github.com/janoside/btc-rpc-explorer), ora abbiamo a disposizione un explorer su regtest. Questo ci consente di visualizzare quanto sta accadendo nella rete regtest di Bitcoin attraverso un'interfaccia grafica.
+
+Per accedere all'explorer, collegati a [http://localhost:3002/](http://localhost:3002/) e avrai a disposizione una GUI per esplorare la rete regtest.
+
 
 ## Per uscire dal container
 Per uscire dal container
