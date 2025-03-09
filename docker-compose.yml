@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   bitcoin-in-action:
     container_name: bitcoin-in-action

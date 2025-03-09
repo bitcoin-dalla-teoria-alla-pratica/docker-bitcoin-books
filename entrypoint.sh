@@ -6,7 +6,11 @@ if [ ! -d "$HOME/.bitcoin" ]; then
   mkdir "$HOME/.bitcoin"
 fi
 
-# Move bitcoin.conf to .bitcoin directory
-cp /opt/bitcoin.conf "$HOME/.bitcoin"
+# Check if bitcoin.conf exists, then move it
+if [ -f "/opt/bitcoin.conf" ]; then
+  cp /opt/bitcoin.conf "$HOME/.bitcoin"
+fi
 
-bitcoind && tail -F ~/.bitcoin/regtest/debug.log
+bitcoind || echo "Errore nell'avvio di bitcoind"
+tail -F ~/.bitcoin/regtest/debug.log
+sleep infinity
